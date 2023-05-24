@@ -11,7 +11,7 @@ const WIDTH = 40
 @onready var tiles = $ScifiTileSet
 #@onready var player = null
 #@onready var player = $Player
-var player
+var player = null
 
 var fovrpas = FOVRPAS.new(Vector2i(WIDTH, HEIGHT))
 
@@ -26,7 +26,7 @@ var visible_tiles: Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var scene = load("res://player.tscn")
+	var scene = load("res://Entities/player.tscn")
 	player = scene.instantiate()
 	add_child(player)
 	

@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwc078f77oxt3"]
+[gd_scene load_steps=5 format=3 uid="uid://bwc078f77oxt3"]
 
 [ext_resource type="Texture2D" uid="uid://dohex2mx2aj02" path="res://Sprites/tileset-top-down-sci-fi.png" id="1_tf141"]
 [ext_resource type="Script" path="res://MapProcGenTest.gd" id="4_fh01q"]
-[ext_resource type="Script" path="res://Components/Health_Component.gd" id="4_ncshq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4yqj3"]
 texture = ExtResource("1_tf141")
@@ -634,8 +633,3 @@ layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 2
 layer_2/tile_data = PackedInt32Array()
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="MapGenTest"]
-
-[node name="Health_Component" type="Node2D" parent="MapGenTest/CharacterBody2D"]
-script = ExtResource("4_ncshq")
