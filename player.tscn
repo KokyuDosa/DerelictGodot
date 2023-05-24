@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl8tuliv6gjo"]
+
+[ext_resource type="Texture2D" uid="uid://c0rsn1mi4iqge" path="res://Sprites/Sprite-0001.png" id="1_nkgh1"]
+
+[node name="Player" type="Sprite2D"]
+top_level = true
+z_index = 3
+position = Vector2(8, 8)
+texture = ExtResource("1_nkgh1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
