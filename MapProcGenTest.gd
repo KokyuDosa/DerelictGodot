@@ -26,6 +26,7 @@ var visible_tiles: Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# load player scene and add as child to current scene
 	var scene = load("res://Entities/player.tscn")
 	player = scene.instantiate()
 	add_child(player)
