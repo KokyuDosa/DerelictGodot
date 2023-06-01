@@ -31,6 +31,7 @@ func _ready():
 	player = scene.instantiate()
 	add_child(player)
 	
+	
 	# Build level
 	build_level()
 	var player_x = 5
@@ -90,6 +91,10 @@ func try_move(dx, dy):
 	var y = player_pos.y + dy
 	
 	if !determine_collision(x, y):
+		# trying out Event class as global bus manager, on movement Event emits
+		# signal for healthChanged
+		Events.emit_signal("healthUpdate", -1)
+		
 		player_pos = Vector2i(x, y)
 		call_deferred("update_visuals")
 		
@@ -225,4 +230,10 @@ func set_and_update_visible_tiles() -> void:
 	for tile in visible_tiles:
 		tiles.set_cell(1, tile, -1)
 		tiles.set_cell(2, tile, -1)
+	
+	
+	# This is a pattern for running methods off of child nodes to prevent errors
+	for child in player.get_children():
+		if child.has_method("getCurrentHealth"):
+			print(child.getCurrentHealth())
 

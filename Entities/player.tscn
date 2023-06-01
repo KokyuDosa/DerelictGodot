@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cl8tuliv6gjo"]
+[gd_scene load_steps=3 format=3 uid="uid://cl8tuliv6gjo"]
 
 [ext_resource type="Texture2D" uid="uid://c0rsn1mi4iqge" path="res://Sprites/Sprite-0001.png" id="1_nkgh1"]
+[ext_resource type="Script" path="res://Components/Health_Component.gd" id="2_dsmmg"]
 
 [node name="Player" type="Sprite2D"]
 top_level = true
@@ -9,3 +10,7 @@ position = Vector2(8, 8)
 texture = ExtResource("1_nkgh1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Health_Component" type="Node2D" parent="."]
+script = ExtResource("2_dsmmg")
+MaxHealth = 50.0
