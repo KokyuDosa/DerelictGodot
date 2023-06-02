@@ -133,7 +133,6 @@ func _process_octant(view_position: Vector2i,
 	var angle_range: float		# Angle range per cell in a given line
 	var start_angle: float		# Angle at start of cell. Cell number (j) * angle_range
 	var end_angle: float		# Angle at end of cell. 
-	var mid_angle: float		# Angle at middle of cell
 	var angle_half_step: float	# Value to add to angle start to get angle mid
 	
 	# Declare array for visible cells
@@ -168,7 +167,6 @@ func _process_octant(view_position: Vector2i,
 			angle_half_step = (angle_range / 2.0)
 			start_angle = j * angle_range
 			end_angle = start_angle + angle_range
-			mid_angle = start_angle + angle_half_step
 			
 			# 2) Get current tile position, can be checked against the _transparent_cells array
 			if is_vertical:

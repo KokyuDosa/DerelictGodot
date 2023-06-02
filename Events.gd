@@ -4,4 +4,5 @@
 extends Node
 
 
-signal healthUpdate(healthDelta)
+signal health_update(healthDelta)
+signal is_deceased

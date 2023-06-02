@@ -93,7 +93,8 @@ func try_move(dx, dy):
 	if !determine_collision(x, y):
 		# trying out Event class as global bus manager, on movement Event emits
 		# signal for healthChanged
-		Events.emit_signal("healthUpdate", -1)
+		var healthDelta = func(): return -1 if x % 2 == 0 else 1
+		Events.emit_signal("health_update", healthDelta.call())
 		
 		player_pos = Vector2i(x, y)
 		call_deferred("update_visuals")
@@ -101,7 +102,10 @@ func try_move(dx, dy):
 		# Print player current position for debug purposes.
 		print("Current player pos: " + str(player_pos.x) + ", " + str(player_pos.y))
 	return
-	
+
+
+# Helper function for determining whether we're colliding with a space that is an obstruction
+# Could potentially be reworked into (x, y) map data for collision or not
 func determine_collision(x, y) -> bool:
 	var space_state = get_world_2d().direct_space_state
 	

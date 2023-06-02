@@ -16,16 +16,17 @@ func _ready():
 	# This signal is connected to the global event manager which contains the
 	# "healthUpdate Signal. updateCurrentHealth is a Callable and healthUpdate
 	# unwraps with the argument for updateCurrentHealth
-	Events.healthUpdate.connect(updateCurrentHealth)
+	Events.health_update.connect(updateCurrentHealth)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
+# Health restricted to 0 <= CurrentHealth <= MaxHealth
 func updateCurrentHealth(delta):
-	CurrentHealth = min(CurrentHealth + delta, MaxHealth)
+	CurrentHealth = max(0, min(CurrentHealth + delta, MaxHealth))
 	
 
 func getCurrentHealth():
