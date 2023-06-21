@@ -21,9 +21,10 @@ Events="*res://Events.gd"
 
 [display]
 
-window/size/viewport_width=2000
-window/size/viewport_height=1400
-window/stretch/scale=5.0
+window/size/viewport_width=384
+window/size/viewport_height=224
+window/size/mode=2
+window/stretch/mode="viewport"
 
 [dotnet]
 

@@ -10,6 +10,7 @@ position = Vector2(8, 8)
 texture = ExtResource("1_nkgh1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(32, 0)
 
 [node name="Health_Component" type="Node2D" parent="."]
 script = ExtResource("2_dsmmg")
